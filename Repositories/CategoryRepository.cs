@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace quickmimo.Repositories
 {
-    internal class CategoryRepository
+    public class CategoryRepository
     {
     }
 }

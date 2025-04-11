@@ -4,14 +4,23 @@
     <Compile Update="dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="inscription.cs">
+    <Compile Update="AuthentificationForms\inscription.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="listeTaches.cs">
+    <Compile Update="TaskForms\AddTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="login.cs">
+    <Compile Update="TaskForms\listeTaches.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AuthentificationForms\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TaskForms\updateTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TaskItem.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>

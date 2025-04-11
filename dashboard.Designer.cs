@@ -30,12 +30,13 @@
         {
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
+            button5 = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
             label1 = new Label();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            button6 = new Button();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -72,6 +73,50 @@
             tableLayoutPanel1.Size = new Size(250, 700);
             tableLayoutPanel1.TabIndex = 0;
             // 
+            // button5
+            // 
+            button5.Dock = DockStyle.Fill;
+            button5.Font = new Font("Comic Sans MS", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button5.Location = new Point(3, 583);
+            button5.Name = "button5";
+            button5.Size = new Size(244, 114);
+            button5.TabIndex = 12;
+            button5.Text = "Déconnexion";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Dock = DockStyle.Fill;
+            button4.Font = new Font("Comic Sans MS", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button4.Location = new Point(3, 467);
+            button4.Name = "button4";
+            button4.Size = new Size(244, 110);
+            button4.TabIndex = 11;
+            button4.Text = "Calendrier";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Dock = DockStyle.Fill;
+            button3.Font = new Font("Comic Sans MS", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button3.Location = new Point(3, 351);
+            button3.Name = "button3";
+            button3.Size = new Size(244, 110);
+            button3.TabIndex = 10;
+            button3.Text = "Notes et categories";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Dock = DockStyle.Fill;
+            button2.Font = new Font("Comic Sans MS", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button2.Location = new Point(3, 235);
+            button2.Name = "button2";
+            button2.Size = new Size(244, 110);
+            button2.TabIndex = 9;
+            button2.Text = "Taches";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -95,55 +140,21 @@
             button1.Text = "Dashboard";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button6
             // 
-            button2.Dock = DockStyle.Fill;
-            button2.Font = new Font("Comic Sans MS", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button2.Location = new Point(3, 235);
-            button2.Name = "button2";
-            button2.Size = new Size(244, 110);
-            button2.TabIndex = 9;
-            button2.Text = "Taches";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Dock = DockStyle.Fill;
-            button3.Font = new Font("Comic Sans MS", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button3.Location = new Point(3, 351);
-            button3.Name = "button3";
-            button3.Size = new Size(244, 110);
-            button3.TabIndex = 10;
-            button3.Text = "Notes et categories";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Dock = DockStyle.Fill;
-            button4.Font = new Font("Comic Sans MS", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button4.Location = new Point(3, 467);
-            button4.Name = "button4";
-            button4.Size = new Size(244, 110);
-            button4.TabIndex = 11;
-            button4.Text = "Calendrier";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Dock = DockStyle.Fill;
-            button5.Font = new Font("Comic Sans MS", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button5.Location = new Point(3, 583);
-            button5.Name = "button5";
-            button5.Size = new Size(244, 114);
-            button5.TabIndex = 12;
-            button5.Text = "Déconnexion";
-            button5.UseVisualStyleBackColor = true;
+            button6.Location = new Point(540, 184);
+            button6.Name = "button6";
+            button6.Size = new Size(112, 34);
+            button6.TabIndex = 1;
+            button6.Text = "button6";
+            button6.UseVisualStyleBackColor = true;
             // 
             // dashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1021, 700);
+            Controls.Add(button6);
             Controls.Add(panel1);
             Name = "dashboard";
             Text = "dashboard";
@@ -163,5 +174,6 @@
         private Button button4;
         private Button button3;
         private Button button2;
+        private Button button6;
     }
 }

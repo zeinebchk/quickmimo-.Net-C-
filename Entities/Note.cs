@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace quickmimo.Entities
 {
-    internal class Note
+    public class Note
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

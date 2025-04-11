@@ -166,3 +166,7 @@ D:\c#.Net\quickmimo\quickmimo\bin\Debug\net8.0-windows\runtimes\browser\lib\net8
 D:\c#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.csproj.Up2Date
 D:\c#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.genruntimeconfig.cache
 D:\c#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\ref\quickmimo.dll
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.sourcelink.json
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.TaskItem.resources
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.TaskForms.AddTaskForm.resources
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.TaskForms.updateTask.resources

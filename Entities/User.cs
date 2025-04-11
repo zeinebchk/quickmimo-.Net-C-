@@ -8,23 +8,34 @@ using System.Text;
 
 namespace quickmimo.Entities
 {
-    internal class User
+    public class User
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
         public string firstName { get; set; }
-        [Required]
         public string lastName { get; set; }
         public string email { get; set; }
+        public int telNumber { get; set; }
         public string proffession { get; set; }
-        public TimeSpan password { get; set; }
+        public string password { get; set; }
 
         public ICollection<MYTask> tasks { get; set; }
         public ICollection<Note> notes { get; set; }
         //[ForeignKey("category")]
         //public int? categoryId { get; set; }
         //public Category category { get; set; }
+
+        public User() { }
+        public User(string firstname, string lastname, int telNumber, string email, string password, string proffession)
+        {
+            this.firstName = firstname;
+            this.lastName = lastname;
+            this.telNumber = telNumber;
+            this.email = email;
+            this.password = password;
+            this.proffession = proffession;
+        }
     }
 }

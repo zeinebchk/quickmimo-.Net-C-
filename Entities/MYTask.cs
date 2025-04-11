@@ -7,7 +7,7 @@ using System.Text;
 
 namespace quickmimo.Entities
 {
-    internal class MYTask
+    public class MYTask
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -16,12 +16,12 @@ namespace quickmimo.Entities
         public string title { get; set; }
         [Required]
         public string description { get; set; }
-        public DateTime ddeadline { get; set; }
+        public DateTime startdate { get; set; }
+        public DateTime deadline { get; set; }
         public int RememeberNotification { get; set; }
         public string status { get; set; }
-        public int servings { get; set; }
         [ForeignKey("user")]
-        public int? userId { get; set; }
+        public int userId { get; set; }
         public User user { get; set; }
     }
 }

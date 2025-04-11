@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using quickmimo.context;
 using quickmimo.Entities;
 
 namespace quickmimo.Repositories
 {
-    internal class TaskRepository
+    public class TaskRepository
     {
         private readonly DBMimoContext _context;
         public TaskRepository(DBMimoContext context)
         {
             _context = context;
         }
-        public IEnumerable<MYTask> GetAllTasksByUser(int id)
+        public List<MYTask> GetAllTasksByUser(int id)
         {
             return _context.tasks.Where(t=>t.userId==id). ToList();
         }
@@ -37,24 +38,26 @@ namespace quickmimo.Repositories
                 _context.SaveChanges();
             }
         }
-        public void UpdateStatus(MYTask task)
+        public void updateTask(MYTask task)
         {
-            _context.tasks.Update(task);
+            var old_task = _context.tasks.FirstOrDefault(e => e.Id == task.Id);
+            _context.Entry(old_task).CurrentValues.SetValues(task);
             _context.SaveChanges();
+
         }
-        public IEnumerable<MYTask> getTodoTasks(int id)
+        public List<MYTask> getTodoTasks(int id)
         {
             var AllTasksByUser = this.GetAllTasksByUser(id);
 
             return AllTasksByUser.Where(t => t.status == "todo").ToList();
         }
-        public IEnumerable<MYTask> getInProgressTasks(int id)
+        public List<MYTask> getInProgressTasks(int id)
         {
             var AllTasksByUser = this.GetAllTasksByUser(id);
 
             return AllTasksByUser.Where(t => t.status == "inProgress").ToList();
         }
-        public IEnumerable<MYTask> getDoneTasks(int id)
+        public List<MYTask> getDoneTasks(int id)
         {
            var  AllTasksByUser = this.GetAllTasksByUser(id);
 

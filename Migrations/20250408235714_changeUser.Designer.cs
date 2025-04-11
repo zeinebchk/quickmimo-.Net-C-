@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using quickmimo.context;
 
@@ -10,9 +11,11 @@ using quickmimo.context;
 namespace quickmimo.Migrations
 {
     [DbContext(typeof(DBMimoContext))]
-    partial class DBMimoContextModelSnapshot : ModelSnapshot
+    [Migration("20250408235714_changeUser")]
+    partial class changeUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.3");
@@ -41,15 +44,15 @@ namespace quickmimo.Migrations
                     b.Property<int>("RememeberNotification")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("deadline")
+                    b.Property<DateTime>("ddeadline")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("description")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("startdate")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("servings")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("status")
                         .IsRequired()

@@ -7,7 +7,7 @@ using quickmimo.Entities;
 
 namespace quickmimo.Repositories
 {
-    internal class UserRepository
+    public class UserRepository
     {
         private readonly DBMimoContext _context;
         public UserRepository(DBMimoContext context)
@@ -23,9 +23,9 @@ namespace quickmimo.Repositories
             return _context.users.FirstOrDefault(c => c.email.Equals(email));
         }
 
-        public void Add(User task)
+        public void Add(User user)
         {
-            _context.users.Add(task);
+            _context.users.Add(user);
             _context.SaveChanges();
         }
         public void Delete(int id)

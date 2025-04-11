@@ -1,9 +1,14 @@
+using System.Data;
 using Microsoft.Extensions.DependencyInjection;
+using quickmimo.context;
+using quickmimo.TaskForms;
 
 namespace quickmimo
 {
     internal static class Program
     {
+        public static DBMimoContext DbContext = new DBMimoContext();
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -15,9 +20,9 @@ namespace quickmimo
             ApplicationConfiguration.Initialize();
 
             var services = new ServiceCollection();
-            services.AddRecipeNoteBookDataService();
+            services.AddMimoNoteBookDataService();
             //appliquer les migrations de demarrage 
-            services.ApplyMigrationsForRecipeNoteBookDataService();
+            services.ApplyMigrationsForMimoNoteBookDataService();
             Application.Run(new login());
         }
     }

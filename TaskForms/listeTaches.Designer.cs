@@ -41,23 +41,19 @@
             button2 = new Button();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
-            lvAfaire = new ListView();
-            columnHeader1 = new ColumnHeader();
-            vScrollBar1 = new VScrollBar();
+            todoPanel = new FlowLayoutPanel();
             panel4 = new Panel();
-            lvEnCours = new ListView();
-            vScrollBar2 = new VScrollBar();
-            panel5 = new Panel();
-            lvTermine = new ListView();
-            vScrollBar3 = new VScrollBar();
+            inProgressPanel = new FlowLayoutPanel();
+            panel = new Panel();
+            donePanel = new FlowLayoutPanel();
             panel6 = new Panel();
-            button10 = new Button();
+            btntermine = new Button();
             label2 = new Label();
             panel7 = new Panel();
-            button8 = new Button();
+            btntodo = new Button();
             label3 = new Label();
             panel8 = new Panel();
-            button9 = new Button();
+            btnInProgress = new Button();
             label4 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -65,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            panel5.SuspendLayout();
+            panel.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
@@ -82,6 +78,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1312, 93);
             panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
             // 
             // pictureBox1
             // 
@@ -142,6 +139,7 @@
             button6.Text = "Déconnexion";
             button6.TextImageRelation = TextImageRelation.ImageBeforeText;
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -211,83 +209,62 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(lvAfaire);
-            panel3.Controls.Add(vScrollBar1);
+            panel3.Controls.Add(todoPanel);
             panel3.Location = new Point(319, 230);
             panel3.Name = "panel3";
             panel3.Size = new Size(300, 391);
             panel3.TabIndex = 3;
             // 
-            // lvAfaire
+            // todoPanel
             // 
-            lvAfaire.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
-            lvAfaire.Location = new Point(0, 0);
-            lvAfaire.Name = "lvAfaire";
-            lvAfaire.Size = new Size(258, 391);
-            lvAfaire.TabIndex = 1;
-            lvAfaire.UseCompatibleStateImageBehavior = false;
-            // 
-            // vScrollBar1
-            // 
-            vScrollBar1.Location = new Point(261, 0);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(39, 391);
-            vScrollBar1.TabIndex = 0;
-            vScrollBar1.Scroll += vScrollBar1_Scroll;
+            todoPanel.AutoScroll = true;
+            todoPanel.Dock = DockStyle.Fill;
+            todoPanel.FlowDirection = FlowDirection.TopDown;
+            todoPanel.Location = new Point(0, 0);
+            todoPanel.Name = "todoPanel";
+            todoPanel.Size = new Size(300, 391);
+            todoPanel.TabIndex = 0;
             // 
             // panel4
             // 
-            panel4.Controls.Add(lvEnCours);
-            panel4.Controls.Add(vScrollBar2);
+            panel4.Controls.Add(inProgressPanel);
             panel4.Location = new Point(669, 234);
             panel4.Name = "panel4";
             panel4.Size = new Size(300, 387);
             panel4.TabIndex = 4;
             panel4.Paint += panel4_Paint;
             // 
-            // lvEnCours
+            // inProgressPanel
             // 
-            lvEnCours.Location = new Point(0, -4);
-            lvEnCours.Name = "lvEnCours";
-            lvEnCours.Size = new Size(258, 391);
-            lvEnCours.TabIndex = 2;
-            lvEnCours.UseCompatibleStateImageBehavior = false;
+            inProgressPanel.AutoScroll = true;
+            inProgressPanel.FlowDirection = FlowDirection.TopDown;
+            inProgressPanel.Location = new Point(0, 3);
+            inProgressPanel.Name = "inProgressPanel";
+            inProgressPanel.Size = new Size(300, 381);
+            inProgressPanel.TabIndex = 0;
             // 
-            // vScrollBar2
+            // panel
             // 
-            vScrollBar2.Location = new Point(261, -4);
-            vScrollBar2.Name = "vScrollBar2";
-            vScrollBar2.Size = new Size(39, 391);
-            vScrollBar2.TabIndex = 1;
+            panel.AutoScroll = true;
+            panel.Controls.Add(donePanel);
+            panel.Location = new Point(998, 231);
+            panel.Name = "panel";
+            panel.Size = new Size(300, 387);
+            panel.TabIndex = 5;
             // 
-            // panel5
+            // donePanel
             // 
-            panel5.Controls.Add(lvTermine);
-            panel5.Controls.Add(vScrollBar3);
-            panel5.Location = new Point(1000, 234);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(300, 387);
-            panel5.TabIndex = 5;
-            // 
-            // lvTermine
-            // 
-            lvTermine.Location = new Point(3, -4);
-            lvTermine.Name = "lvTermine";
-            lvTermine.Size = new Size(258, 391);
-            lvTermine.TabIndex = 2;
-            lvTermine.UseCompatibleStateImageBehavior = false;
-            // 
-            // vScrollBar3
-            // 
-            vScrollBar3.Location = new Point(261, 0);
-            vScrollBar3.Name = "vScrollBar3";
-            vScrollBar3.Size = new Size(39, 387);
-            vScrollBar3.TabIndex = 0;
+            donePanel.AutoScroll = true;
+            donePanel.FlowDirection = FlowDirection.TopDown;
+            donePanel.Location = new Point(2, 3);
+            donePanel.Name = "donePanel";
+            donePanel.Size = new Size(300, 381);
+            donePanel.TabIndex = 1;
             // 
             // panel6
             // 
             panel6.BackColor = Color.YellowGreen;
-            panel6.Controls.Add(button10);
+            panel6.Controls.Add(btntermine);
             panel6.Controls.Add(label2);
             panel6.Font = new Font("Constantia", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel6.Location = new Point(1000, 174);
@@ -295,16 +272,17 @@
             panel6.Size = new Size(300, 57);
             panel6.TabIndex = 6;
             // 
-            // button10
+            // btntermine
             // 
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.Location = new Point(239, 14);
-            button10.Name = "button10";
-            button10.Size = new Size(47, 34);
-            button10.TabIndex = 3;
-            button10.UseVisualStyleBackColor = true;
+            btntermine.FlatAppearance.BorderSize = 0;
+            btntermine.FlatStyle = FlatStyle.Flat;
+            btntermine.Image = (Image)resources.GetObject("btntermine.Image");
+            btntermine.Location = new Point(239, 14);
+            btntermine.Name = "btntermine";
+            btntermine.Size = new Size(47, 34);
+            btntermine.TabIndex = 3;
+            btntermine.UseVisualStyleBackColor = true;
+            btntermine.Click += btntermine_Click;
             // 
             // label2
             // 
@@ -318,7 +296,7 @@
             // panel7
             // 
             panel7.BackColor = Color.Crimson;
-            panel7.Controls.Add(button8);
+            panel7.Controls.Add(btntodo);
             panel7.Controls.Add(label3);
             panel7.Font = new Font("Constantia", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel7.Location = new Point(319, 174);
@@ -326,16 +304,17 @@
             panel7.Size = new Size(300, 57);
             panel7.TabIndex = 7;
             // 
-            // button8
+            // btntodo
             // 
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.Location = new Point(240, 14);
-            button8.Name = "button8";
-            button8.Size = new Size(47, 34);
-            button8.TabIndex = 1;
-            button8.UseVisualStyleBackColor = true;
+            btntodo.FlatAppearance.BorderSize = 0;
+            btntodo.FlatStyle = FlatStyle.Flat;
+            btntodo.Image = (Image)resources.GetObject("btntodo.Image");
+            btntodo.Location = new Point(240, 14);
+            btntodo.Name = "btntodo";
+            btntodo.Size = new Size(47, 34);
+            btntodo.TabIndex = 1;
+            btntodo.UseVisualStyleBackColor = true;
+            btntodo.Click += btntodo_Click;
             // 
             // label3
             // 
@@ -350,7 +329,7 @@
             // panel8
             // 
             panel8.BackColor = Color.DarkOrange;
-            panel8.Controls.Add(button9);
+            panel8.Controls.Add(btnInProgress);
             panel8.Controls.Add(label4);
             panel8.Font = new Font("Constantia", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel8.Location = new Point(669, 174);
@@ -358,16 +337,17 @@
             panel8.Size = new Size(300, 57);
             panel8.TabIndex = 7;
             // 
-            // button9
+            // btnInProgress
             // 
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Image = (Image)resources.GetObject("button9.Image");
-            button9.Location = new Point(239, 14);
-            button9.Name = "button9";
-            button9.Size = new Size(47, 34);
-            button9.TabIndex = 2;
-            button9.UseVisualStyleBackColor = true;
+            btnInProgress.FlatAppearance.BorderSize = 0;
+            btnInProgress.FlatStyle = FlatStyle.Flat;
+            btnInProgress.Image = (Image)resources.GetObject("btnInProgress.Image");
+            btnInProgress.Location = new Point(239, 14);
+            btnInProgress.Name = "btnInProgress";
+            btnInProgress.Size = new Size(47, 34);
+            btnInProgress.TabIndex = 2;
+            btnInProgress.UseVisualStyleBackColor = true;
+            btnInProgress.Click += btnInProgress_Click;
             // 
             // label4
             // 
@@ -387,7 +367,7 @@
             Controls.Add(panel8);
             Controls.Add(panel7);
             Controls.Add(panel6);
-            Controls.Add(panel5);
+            Controls.Add(panel);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -395,6 +375,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "listeTaches";
             Text = "listeTaches";
+            Load += listeTaches_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -402,7 +383,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
+            panel.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel7.ResumeLayout(false);
@@ -428,7 +409,7 @@
         private VScrollBar vScrollBar1;
         private Panel panel4;
         private VScrollBar vScrollBar2;
-        private Panel panel5;
+        private Panel panel;
         private VScrollBar vScrollBar3;
         private Panel panel6;
         private Label label2;
@@ -436,12 +417,16 @@
         private Label label3;
         private Panel panel8;
         private Label label4;
-        private ListView lvAfaire;
-        private Button button10;
-        private Button button8;
-        private Button button9;
+        private Button btntermine;
+        private Button btntodo;
+        private Button btnInProgress;
         private ListView lvEnCours;
         private ListView lvTermine;
-        private ColumnHeader columnHeader1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn task;
+        private DataGridViewTextBoxColumn btn;
+        private FlowLayoutPanel todoPanel;
+        private FlowLayoutPanel inProgressPanel;
+        private FlowLayoutPanel donePanel;
     }
 }
