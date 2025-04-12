@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using quickmimo.context;
 using quickmimo.Entities;
 using quickmimo.Repositories;
 using quickmimo.TaskForms;
+using quickmimo.Calendrier;
+using Calendar = quickmimo.Calendrier.Calendar;
 
 namespace quickmimo
 {
@@ -158,6 +161,19 @@ namespace quickmimo
                 taskItem.Taskid = task.Id.ToString();
                 donePanel.Controls.Add(taskItem);
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Calendar calendarForm = new Calendar();
+            calendarForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listeTaches taskList = new listeTaches();
+            taskList.Show();
+            this.Close();
         }
     }
 }

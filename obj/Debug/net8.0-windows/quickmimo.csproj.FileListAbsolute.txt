@@ -170,3 +170,5 @@ D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.sourcelink.json
 D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.TaskItem.resources
 D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.TaskForms.AddTaskForm.resources
 D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.TaskForms.updateTask.resources
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.Calendrier.Calendar.resources
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.Calendrier.ucDays.resources

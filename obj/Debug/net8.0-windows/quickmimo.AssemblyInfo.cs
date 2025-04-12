@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("quickmimo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c345f691cf6a89cfaab8a3c0afc17ce47001de3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c78957841833dbd4d1ee511de89ed6b36991c2a")]
 [assembly: System.Reflection.AssemblyProductAttribute("quickmimo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("quickmimo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

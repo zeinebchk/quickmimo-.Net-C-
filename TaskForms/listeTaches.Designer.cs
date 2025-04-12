@@ -76,16 +76,16 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1312, 93);
+            panel2.Size = new Size(1312, 65);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1239, 17);
+            pictureBox1.Location = new Point(1252, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(59, 58);
+            pictureBox1.Size = new Size(46, 42);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
@@ -104,7 +104,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe Script", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(21, 22);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
             label1.Size = new Size(244, 53);
             label1.TabIndex = 8;
@@ -121,9 +121,9 @@
             panel1.Controls.Add(button2);
             panel1.Controls.Add(pictureBox2);
             panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 93);
+            panel1.Location = new Point(0, 65);
             panel1.Name = "panel1";
-            panel1.Size = new Size(246, 563);
+            panel1.Size = new Size(246, 591);
             panel1.TabIndex = 2;
             // 
             // button6
@@ -154,6 +154,7 @@
             button5.Text = "   Calendrier";
             button5.TextImageRelation = TextImageRelation.ImageBeforeText;
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -182,6 +183,7 @@
             button3.Text = "    Taches";
             button3.TextImageRelation = TextImageRelation.ImageBeforeText;
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -212,7 +214,7 @@
             panel3.Controls.Add(todoPanel);
             panel3.Location = new Point(319, 230);
             panel3.Name = "panel3";
-            panel3.Size = new Size(300, 391);
+            panel3.Size = new Size(300, 385);
             panel3.TabIndex = 3;
             // 
             // todoPanel
@@ -222,7 +224,7 @@
             todoPanel.FlowDirection = FlowDirection.TopDown;
             todoPanel.Location = new Point(0, 0);
             todoPanel.Name = "todoPanel";
-            todoPanel.Size = new Size(300, 391);
+            todoPanel.Size = new Size(300, 385);
             todoPanel.TabIndex = 0;
             // 
             // panel4
@@ -230,7 +232,7 @@
             panel4.Controls.Add(inProgressPanel);
             panel4.Location = new Point(669, 234);
             panel4.Name = "panel4";
-            panel4.Size = new Size(300, 387);
+            panel4.Size = new Size(300, 359);
             panel4.TabIndex = 4;
             panel4.Paint += panel4_Paint;
             // 
@@ -240,7 +242,7 @@
             inProgressPanel.FlowDirection = FlowDirection.TopDown;
             inProgressPanel.Location = new Point(0, 3);
             inProgressPanel.Name = "inProgressPanel";
-            inProgressPanel.Size = new Size(300, 381);
+            inProgressPanel.Size = new Size(300, 378);
             inProgressPanel.TabIndex = 0;
             // 
             // panel
@@ -249,7 +251,7 @@
             panel.Controls.Add(donePanel);
             panel.Location = new Point(998, 231);
             panel.Name = "panel";
-            panel.Size = new Size(300, 387);
+            panel.Size = new Size(300, 359);
             panel.TabIndex = 5;
             // 
             // donePanel
@@ -269,7 +271,7 @@
             panel6.Font = new Font("Constantia", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel6.Location = new Point(1000, 174);
             panel6.Name = "panel6";
-            panel6.Size = new Size(300, 57);
+            panel6.Size = new Size(300, 59);
             panel6.TabIndex = 6;
             // 
             // btntermine
@@ -301,7 +303,7 @@
             panel7.Font = new Font("Constantia", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel7.Location = new Point(319, 174);
             panel7.Name = "panel7";
-            panel7.Size = new Size(300, 57);
+            panel7.Size = new Size(300, 59);
             panel7.TabIndex = 7;
             // 
             // btntodo
@@ -334,7 +336,7 @@
             panel8.Font = new Font("Constantia", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel8.Location = new Point(669, 174);
             panel8.Name = "panel8";
-            panel8.Size = new Size(300, 57);
+            panel8.Size = new Size(300, 59);
             panel8.TabIndex = 7;
             // 
             // btnInProgress
