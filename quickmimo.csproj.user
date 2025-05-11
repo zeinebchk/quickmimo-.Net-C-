@@ -13,6 +13,18 @@
     <Compile Update="AuthentificationForms\inscription.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Notes\NoteControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Notes\NoteEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Notes\NotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="statistique\Statistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TaskForms\AddTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>

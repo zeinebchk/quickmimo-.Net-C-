@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using quickmimo.Entities;
 using quickmimo.Repositories;
+using quickmimo.statistique;
+using stickeynotes;
 
 namespace quickmimo.Calendrier
 {
@@ -99,6 +101,28 @@ namespace quickmimo.Calendrier
         {
             Calendar calendar = new Calendar();
             calendar.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            NotesForm note = new NotesForm();
+            note.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Statistic note = new Statistic();
+            note.Show();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            UserSession.connectedUser = null;
+            login login = new login();
+            login.Show();
             this.Close();
         }
     }

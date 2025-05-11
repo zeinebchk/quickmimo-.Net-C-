@@ -14,15 +14,15 @@ namespace quickmimo.context
         public DBMimoContext() { }
         public DBMimoContext(DbContextOptions<DBMimoContext> options) : base(options) { }
         public DbSet<User> users { get; set; }
-        public DbSet<Category> categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<MYTask> tasks { get; set; }
-        public DbSet<Note> notes { get; set; }
+        public DbSet<Note> Notes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
                 //config par defaut pour les outils EF Core
-                optionsBuilder.UseSqlite("data source =mimo.db");
+                optionsBuilder.UseSqlite("data source =quick.db");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,18 +33,19 @@ namespace quickmimo.context
                  .HasForeignKey(r => r.userId)
                  .OnDelete(DeleteBehavior.SetNull);
 
-            //config des contraintes de validation
+            // Configuration pour User
             modelBuilder.Entity<Note>()
-                .HasOne(r => r.user)
-                .WithMany(r => r.notes)
-                .HasForeignKey(r => r.userId)
+                .HasOne(n => n.User)
+                .WithMany(u => u.notes)
+                .HasForeignKey(n => n.UserId)
                 .OnDelete(DeleteBehavior.SetNull);
 
+            // Configuration pour Category
             modelBuilder.Entity<Note>()
-              .HasOne(r => r.category)
-              .WithMany(r => r.notes)
-              .HasForeignKey(r => r.categotyId)
-              .OnDelete(DeleteBehavior.SetNull);
+                .HasOne(n => n.Category)
+                .WithMany(c => c.notes)
+                .HasForeignKey(n => n.CategoryId)
+                .OnDelete(DeleteBehavior.SetNull);
 
 
         }

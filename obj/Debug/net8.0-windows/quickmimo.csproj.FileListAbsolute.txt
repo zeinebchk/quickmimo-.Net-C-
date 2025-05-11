@@ -172,3 +172,8 @@ D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.TaskForms.AddTa
 D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.TaskForms.updateTask.resources
 D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.Calendrier.Calendar.resources
 D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.Calendrier.ucDays.resources
+D:\C#.Net\quickmimo\quickmimo\bin\Debug\net8.0-windows\System.Windows.Forms.DataVisualization.dll
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\NotesService.resources
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.statistique.Statistic.resources
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\quickmimo.Notes.NoteEditorForm.resources
+D:\C#.Net\quickmimo\quickmimo\obj\Debug\net8.0-windows\stickeynotes.NotesForm.resources

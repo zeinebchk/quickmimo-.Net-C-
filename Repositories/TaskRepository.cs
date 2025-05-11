@@ -16,6 +16,10 @@ namespace quickmimo.Repositories
         {
             _context = context;
         }
+        public async Task<List<MYTask>> GetAllAsync()
+        {
+            return await _context.tasks.ToListAsync();
+        }
         public List<MYTask> GetAllTasksByUser(int id)
         {
             return _context.tasks.Where(t=>t.userId==id). ToList();

@@ -87,6 +87,7 @@
             button6.Text = "Déconnexion";
             button6.TextImageRelation = TextImageRelation.ImageBeforeText;
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -116,6 +117,7 @@
             button4.Text = "   Notes";
             button4.TextImageRelation = TextImageRelation.ImageBeforeText;
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -145,6 +147,7 @@
             button2.Text = "    Dashboard";
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // pictureBox2
             // 
@@ -331,6 +334,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Calendar";
             Text = "Calendar";
+            WindowState = FormWindowState.Maximized;
             Load += Calendar_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

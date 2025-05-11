@@ -48,6 +48,8 @@ namespace quickmimo
                 updateTask updateForm = new updateTask(t);
                 //updateForm.Owner = this;
                 updateForm.ShowDialog();
+                //update fenetre lo5ra
+
             }
             //OnDetailsClick?.Invoke(this, EventArgs.Empty);
         }

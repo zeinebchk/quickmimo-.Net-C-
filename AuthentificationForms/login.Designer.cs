@@ -139,6 +139,7 @@
             Controls.Add(label1);
             Name = "login";
             Text = "Form1";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace quickmimo.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class initialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "categories",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -21,7 +21,7 @@ namespace quickmimo.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_categories", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -33,8 +33,9 @@ namespace quickmimo.Migrations
                     firstName = table.Column<string>(type: "TEXT", nullable: false),
                     lastName = table.Column<string>(type: "TEXT", nullable: false),
                     email = table.Column<string>(type: "TEXT", nullable: false),
+                    telNumber = table.Column<int>(type: "INTEGER", nullable: false),
                     proffession = table.Column<string>(type: "TEXT", nullable: false),
-                    password = table.Column<TimeSpan>(type: "TEXT", nullable: false)
+                    password = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,31 +43,31 @@ namespace quickmimo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "notes",
+                name: "Notes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    title = table.Column<string>(type: "TEXT", nullable: false),
-                    description = table.Column<string>(type: "TEXT", nullable: false),
-                    dateEvent = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    Title = table.Column<string>(type: "TEXT", nullable: false),
+                    Content = table.Column<string>(type: "TEXT", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Rappel = table.Column<int>(type: "INTEGER", nullable: false),
                     FileData = table.Column<byte[]>(type: "BLOB", nullable: false),
-                    userId = table.Column<int>(type: "INTEGER", nullable: true),
-                    categotyId = table.Column<int>(type: "INTEGER", nullable: true)
+                    UserId = table.Column<int>(type: "INTEGER", nullable: true),
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_notes", x => x.Id);
+                    table.PrimaryKey("PK_Notes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_notes_categories_categotyId",
-                        column: x => x.categotyId,
-                        principalTable: "categories",
+                        name: "FK_Notes_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
-                        name: "FK_notes_users_userId",
-                        column: x => x.userId,
+                        name: "FK_Notes_users_UserId",
+                        column: x => x.UserId,
                         principalTable: "users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.SetNull);
@@ -80,11 +81,11 @@ namespace quickmimo.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     title = table.Column<string>(type: "TEXT", nullable: false),
                     description = table.Column<string>(type: "TEXT", nullable: false),
-                    ddeadline = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    startdate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    deadline = table.Column<DateTime>(type: "TEXT", nullable: false),
                     RememeberNotification = table.Column<int>(type: "INTEGER", nullable: false),
                     status = table.Column<string>(type: "TEXT", nullable: false),
-                    servings = table.Column<int>(type: "INTEGER", nullable: false),
-                    userId = table.Column<int>(type: "INTEGER", nullable: true)
+                    userId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -98,14 +99,14 @@ namespace quickmimo.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_notes_categotyId",
-                table: "notes",
-                column: "categotyId");
+                name: "IX_Notes_CategoryId",
+                table: "Notes",
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_notes_userId",
-                table: "notes",
-                column: "userId");
+                name: "IX_Notes_UserId",
+                table: "Notes",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tasks_userId",
@@ -117,13 +118,13 @@ namespace quickmimo.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "notes");
+                name: "Notes");
 
             migrationBuilder.DropTable(
                 name: "tasks");
 
             migrationBuilder.DropTable(
-                name: "categories");
+                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "users");

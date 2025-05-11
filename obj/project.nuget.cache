@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "USEMoCq2Rzo=",
+  "dgSpecHash": "cAnuYUn4ZtU=",
   "success": true,
   "projectFilePath": "D:\\C#.Net\\quickmimo\\quickmimo\\quickmimo.csproj",
   "expectedPackageFiles": [
@@ -53,7 +53,8 @@
     "C:\\Users\\m\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\m\\.nuget\\packages\\system.text.encodings.web\\9.0.3\\system.text.encodings.web.9.0.3.nupkg.sha512",
     "C:\\Users\\m\\.nuget\\packages\\system.text.json\\9.0.3\\system.text.json.9.0.3.nupkg.sha512",
-    "C:\\Users\\m\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
+    "C:\\Users\\m\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
+    "C:\\Users\\m\\.nuget\\packages\\system.windows.forms.datavisualization\\1.0.0-prerelease.20110.1\\system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512"
   ],
   "logs": []
 }

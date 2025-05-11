@@ -15,6 +15,8 @@ using quickmimo.Repositories;
 using quickmimo.TaskForms;
 using quickmimo.Calendrier;
 using Calendar = quickmimo.Calendrier.Calendar;
+using quickmimo.statistique;
+using stickeynotes;
 
 namespace quickmimo
 {
@@ -167,12 +169,27 @@ namespace quickmimo
         {
             Calendar calendarForm = new Calendar();
             calendarForm.Show();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             listeTaches taskList = new listeTaches();
             taskList.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Statistic statistic = new Statistic();
+            statistic.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            NotesForm note = new NotesForm();
+            note.Show();
             this.Close();
         }
     }

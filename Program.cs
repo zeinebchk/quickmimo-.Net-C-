@@ -2,6 +2,7 @@ using System.Data;
 using System.Globalization;
 using Microsoft.Extensions.DependencyInjection;
 using quickmimo.context;
+using quickmimo.statistique;
 using quickmimo.TaskForms;
 using Calendar = quickmimo.Calendrier.Calendar;
 

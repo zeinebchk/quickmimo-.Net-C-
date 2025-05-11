@@ -16,7 +16,7 @@ namespace quickmimo
             services.AddDbContext<DBMimoContext>(
                Options =>
                {
-                   Options.UseSqlite("DataSource=mimo.db");
+                   Options.UseSqlite("DataSource=quick.db");
                    //utiliser seeding pour initialiser la base de donnee avec les donnes de test
                    //Options.UseSeeding((context, _) =>
                    //{

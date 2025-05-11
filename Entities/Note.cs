@@ -11,22 +11,32 @@ namespace quickmimo.Entities
     public class Note
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
-        public string title { get; set; }
-        [Required]
-        public string description { get; set; }
-        public DateOnly dateEvent { get; set; }
-        public int Rappel { get; set; }
-        public byte[] FileData { get; set; }
 
-        [ForeignKey("user")]
-        public int? userId { get; set; }
-        public User user { get; set; }
-        [ForeignKey("category")]
-        public int? categotyId { get; set; }
-        public Category category { get; set; }
+        [Required]
+        public string Title { get; set; } = string.Empty;
+
+        [Required]
+        public string Content { get; set; } = string.Empty;
+
+        public DateTime DateCreated { get; set; } = DateTime.Now;
+
+        public int Rappel { get; set; }
+
+        [Required]
+        public byte[] FileData { get; set; } = Array.Empty<byte>();
+
+        // Relation avec User (correctement typée)
+        [ForeignKey("UserId")]
+        public User? User { get; set; }  // Navigation property PascalCase
+
+        public int? UserId { get; set; }  // Clé étrangère nullable
+
+        // Relation avec Category (corrigée)
+        [ForeignKey("CategoryId")]
+        public Category? Category { get; set; }  // Type référence
+
+        public int? CategoryId { get; set; }  // Clé étrangère nullable
 
     }
 }

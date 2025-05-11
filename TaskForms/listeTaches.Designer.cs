@@ -169,6 +169,7 @@
             button4.Text = "   Notes";
             button4.TextImageRelation = TextImageRelation.ImageBeforeText;
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -198,6 +199,7 @@
             button2.Text = "    Dashboard";
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // pictureBox2
             // 
@@ -377,6 +379,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "listeTaches";
             Text = "listeTaches";
+            WindowState = FormWindowState.Maximized;
             Load += listeTaches_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

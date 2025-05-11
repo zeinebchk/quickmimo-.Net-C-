@@ -11,8 +11,8 @@ using quickmimo.context;
 namespace quickmimo.Migrations
 {
     [DbContext(typeof(DBMimoContext))]
-    [Migration("20250410214906_changeTask")]
-    partial class changeTask
+    [Migration("20250511002447_initialCreate")]
+    partial class initialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,7 +32,7 @@ namespace quickmimo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("categories");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("quickmimo.Entities.MYTask", b =>
@@ -62,7 +62,7 @@ namespace quickmimo.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("userId")
+                    b.Property<int>("userId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -78,6 +78,16 @@ namespace quickmimo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("TEXT");
+
                     b.Property<byte[]>("FileData")
                         .IsRequired()
                         .HasColumnType("BLOB");
@@ -85,30 +95,20 @@ namespace quickmimo.Migrations
                     b.Property<int>("Rappel")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("categotyId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateOnly>("dateEvent")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("description")
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("title")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("userId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("categotyId");
+                    b.HasIndex("CategoryId");
 
-                    b.HasIndex("userId");
+                    b.HasIndex("UserId");
 
-                    b.ToTable("notes");
+                    b.ToTable("Notes");
                 });
 
             modelBuilder.Entity("quickmimo.Entities.User", b =>
@@ -150,26 +150,27 @@ namespace quickmimo.Migrations
                     b.HasOne("quickmimo.Entities.User", "user")
                         .WithMany("tasks")
                         .HasForeignKey("userId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
 
                     b.Navigation("user");
                 });
 
             modelBuilder.Entity("quickmimo.Entities.Note", b =>
                 {
-                    b.HasOne("quickmimo.Entities.Category", "category")
+                    b.HasOne("quickmimo.Entities.Category", "Category")
                         .WithMany("notes")
-                        .HasForeignKey("categotyId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("quickmimo.Entities.User", "user")
+                    b.HasOne("quickmimo.Entities.User", "User")
                         .WithMany("notes")
-                        .HasForeignKey("userId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.Navigation("category");
+                    b.Navigation("Category");
 
-                    b.Navigation("user");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("quickmimo.Entities.Category", b =>
