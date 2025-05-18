@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTaskForm));
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             txtTitle = new TextBox();
@@ -51,7 +52,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.note_collante_removebg_preview;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(440, 35);
             pictureBox2.Margin = new Padding(4, 3, 4, 3);
             pictureBox2.Name = "pictureBox2";
@@ -62,7 +63,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.note_collante_removebg_preview;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(13, 35);
             pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
@@ -80,7 +81,7 @@
             txtTitle.Margin = new Padding(4, 3, 4, 3);
             txtTitle.Name = "txtTitle";
             txtTitle.PlaceholderText = "Titre";
-            txtTitle.Size = new Size(360, 33);
+            txtTitle.Size = new Size(360, 29);
             txtTitle.TabIndex = 26;
             // 
             // btnInscri
@@ -103,7 +104,7 @@
             label1.Location = new Point(93, 35);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(325, 57);
+            label1.Size = new Size(270, 48);
             label1.TabIndex = 22;
             label1.Text = "Créer une tache";
             label1.Click += label1_Click;
@@ -134,7 +135,7 @@
             comboStatus.Location = new Point(206, 386);
             comboStatus.Margin = new Padding(4, 3, 4, 3);
             comboStatus.Name = "comboStatus";
-            comboStatus.Size = new Size(218, 32);
+            comboStatus.Size = new Size(218, 29);
             comboStatus.TabIndex = 35;
             // 
             // label2
@@ -143,7 +144,7 @@
             label2.Location = new Point(64, 386);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(118, 24);
+            label2.Size = new Size(100, 21);
             label2.TabIndex = 36;
             label2.Text = "Dans la liste";
             // 
@@ -153,7 +154,7 @@
             deadlineDate.Format = DateTimePickerFormat.Custom;
             deadlineDate.Location = new Point(64, 618);
             deadlineDate.Name = "deadlineDate";
-            deadlineDate.Size = new Size(360, 32);
+            deadlineDate.Size = new Size(360, 28);
             deadlineDate.TabIndex = 37;
             // 
             // label3
@@ -161,7 +162,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(64, 559);
             label3.Name = "label3";
-            label3.Size = new Size(154, 24);
+            label3.Size = new Size(130, 21);
             label3.TabIndex = 38;
             label3.Text = "Date d'échéance";
             // 
@@ -170,7 +171,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(64, 692);
             label4.Name = "label4";
-            label4.Size = new Size(171, 24);
+            label4.Size = new Size(146, 21);
             label4.TabIndex = 40;
             label4.Text = "Définir un rappel  ";
             // 
@@ -180,7 +181,7 @@
             notifDate.Location = new Point(242, 689);
             notifDate.Margin = new Padding(4, 3, 4, 3);
             notifDate.Name = "notifDate";
-            notifDate.Size = new Size(182, 32);
+            notifDate.Size = new Size(182, 29);
             notifDate.TabIndex = 41;
             // 
             // label5
@@ -188,7 +189,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(64, 438);
             label5.Name = "label5";
-            label5.Size = new Size(107, 24);
+            label5.Size = new Size(92, 21);
             label5.TabIndex = 43;
             label5.Text = "Date début";
             // 
@@ -199,7 +200,7 @@
             startDatePicker.Location = new Point(64, 489);
             startDatePicker.Name = "startDatePicker";
             startDatePicker.ShowUpDown = true;
-            startDatePicker.Size = new Size(360, 32);
+            startDatePicker.Size = new Size(360, 28);
             startDatePicker.TabIndex = 42;
             // 
             // btnAnnuler
@@ -217,7 +218,7 @@
             // 
             // AddTaskForm
             // 
-            AutoScaleDimensions = new SizeF(12F, 24F);
+            AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(566, 864);

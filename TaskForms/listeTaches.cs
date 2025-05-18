@@ -192,5 +192,20 @@ namespace quickmimo
             note.Show();
             this.Close();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void inProgressPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void donePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

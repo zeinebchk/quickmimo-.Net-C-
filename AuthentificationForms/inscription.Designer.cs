@@ -1,4 +1,7 @@
-﻿namespace quickmimo
+﻿
+
+
+namespace quickmimo
 {
     partial class inscription
     {

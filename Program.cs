@@ -5,7 +5,7 @@ using quickmimo.context;
 using quickmimo.statistique;
 using quickmimo.TaskForms;
 using Calendar = quickmimo.Calendrier.Calendar;
-
+using Microsoft.Data.SqlClient;
 namespace quickmimo
 {
     internal static class Program
@@ -18,8 +18,10 @@ namespace quickmimo
         [STAThread]
         static void Main()
         {
+            AppContext.SetSwitch("System.Drawing.EnableUnixSupport", true);
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+
             ApplicationConfiguration.Initialize();
 
             var services = new ServiceCollection();
